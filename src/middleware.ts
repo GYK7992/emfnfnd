@@ -3,7 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 
 // 미들웨어: 모든 요청마다 실행돼요
 // 로그인이 필요한 페이지에 접근하면 로그인 페이지로 보내줘요
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
   const supabase = createServerClient(
